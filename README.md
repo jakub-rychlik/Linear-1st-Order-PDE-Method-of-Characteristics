@@ -1,6 +1,6 @@
 # Linear-1st-Order-PDE-Method-of-Characteristics
 Program for calculating numerical solutions for linear 1st order partial differential equations.
-I designed this algorithm in my bachelor thesis.
+I designed this algorithm in my bachelor thesis at Charles university, Faculty of Mathematics and Physics.
 
 ## Project structure
 ### Source code
