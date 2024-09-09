@@ -47,7 +47,7 @@ for j=1:length(S)
     temp = split(convertCharsToStrings(temp{1}),",");
     interval = inputdlg("Interval [a,b], write as 'a,b'");
     interval = split(convertCharsToStrings(interval{1}),",");
-    I = [str2double(interval(1));str2double(interval(2))];
+    I = [str2num(interval(1));str2num(interval(2))];
     v = str2func(append("@(s)",temp(1)));
     w = str2func(append("@(s)",temp(2)));
     S{j} = struct('xfunc',v,'yfunc',w,'int',I);
@@ -60,7 +60,7 @@ for j=1:length(Q)
     temp = split(convertCharsToStrings(temp{1}),",");
     interval = inputdlg("Interval [a,b], write as 'a,b'");
     interval = split(convertCharsToStrings(interval{1}),",");
-    I = [str2double(interval(1));str2double(interval(2))];
+    I = [str2num(interval(1));str2num(interval(2))];
     v = str2func(append("@(s)",temp(1)));
     w = str2func(append("@(s)",temp(2)));
     Q{j} = struct('xfunc',v,'yfunc',w,'int',I);
@@ -79,7 +79,7 @@ end
 adj_tol = inputdlg("Do you want to adjust toleration constant? (y/n)");  % possible adjustment of constant 'tol'
 if adj_tol{1} == 'y'
     tol = inputdlg("tol = ");
-    tol = str2double(convertCharsToStrings(tol{1}))+10^(-10);
+    tol = str2num(convertCharsToStrings(tol{1}))+10^(-10);
 else
     tol = 0.15+10^(-10);  % +10^(-10) because of double-precision in Matlab
 end
